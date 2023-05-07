@@ -1,0 +1,52 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdbool.h>
+#include<limits.h>
+
+int minDistance(int dist[],int sptSet[])
+{
+ int min=INT_MAX,min_index;
+ for(int v=0;v<V;v++)
+ if(sptSet[v]==false && dist[v]<=min)
+ min=dist[v],min_index=v;
+ return min_index;
+}
+
+void print(int dist[])
+{
+ printf("vertex \t Distance from sourcn");
+ for(int i=0;i<V;i++)
+ printf("%d\t\t%d\n",i,dist[i]);
+}
+
+void dijkstra(int graph[10][10],int src)
+{
+ int dist[v];
+bool sptSet[v];
+for(int i=0;i<V;i++)
+dist[i]=INT_MAX,sptSet[i]=false;
+dist[src]=0;
+for(int count=0;count<V-1;count++)
+{
+ int u=minDistanc(dist,sptSet);
+ sptSet[u]=true;
+ for(int v=0;v<=V;v++)
+ if(!sptSet[v] && graph[u][v] && dist[u]!=INT_MAX && dist[u]+ graph[u][v]< dist[v])
+ dist[v]=dist[u]+graph[u][v];
+ }
+ print(dist);
+ }
+ int main()
+ {
+ int v,graph[10][10],i,j;
+ printf("Enter the total vertices:");
+ scanf("%d",&v);
+ printf("\n the graph is \n");
+ for(i=0;i<V;i++)
+ {
+  for(j=0;j<V;j++)
+  {
+   scanf("%d",&fraph[i][j]);
+  }
+ }
+ 
